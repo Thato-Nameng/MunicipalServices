@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3DDAEEC-CB15-47BF-B92B-F16CB53F0B91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Municipal_Services</RootNamespace>
+    <AssemblyName>Municipal Services</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LocalEventsFile\Event.cs" />
+    <Compile Include="LocalEventsFile\ListViewColumnSorter.cs" />
+    <Compile Include="LocalEventsFile\LocalEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalEventsFile\LocalEvents.Designer.cs">
+      <DependentUpon>LocalEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportIssuesFile\DisplayReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportIssuesFile\DisplayReports.Designer.cs">
+      <DependentUpon>DisplayReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportIssuesFile\ReportIssues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportIssuesFile\ReportIssues.Designer.cs">
+      <DependentUpon>ReportIssues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceStatusFile\AddRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceStatusFile\AddRequestForm.Designer.cs">
+      <DependentUpon>AddRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceStatusFile\AVLTree.cs" />
+    <Compile Include="ServiceStatusFile\EditStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceStatusFile\EditStatus.Designer.cs">
+      <DependentUpon>EditStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceStatusFile\MinHeap.cs" />
+    <Compile Include="ServiceStatusFile\ServiceRequest.cs" />
+    <Compile Include="ServiceStatusFile\ServiceStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceStatusFile\ServiceStatus.Designer.cs">
+      <DependentUpon>ServiceStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceStatusFile\ServiceStatusGraph.cs" />
+    <EmbeddedResource Include="LocalEventsFile\LocalEvents.resx">
+      <DependentUpon>LocalEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReportIssuesFile\DisplayReports.resx">
+      <DependentUpon>DisplayReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportIssuesFile\ReportIssues.resx">
+      <DependentUpon>ReportIssues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceStatusFile\AddRequestForm.resx">
+      <DependentUpon>AddRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceStatusFile\EditStatus.resx">
+      <DependentUpon>EditStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceStatusFile\ServiceStatus.resx">
+      <DependentUpon>ServiceStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
